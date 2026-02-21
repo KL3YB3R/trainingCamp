@@ -43,7 +43,7 @@
                 </aside>
             </article>
 
-            <button type="submit" style="background-color: #2b7a78; color: white; border: none; padding: 10px 20px; border-radius: 4px; cursor: pointer; width: 100%; margin-top: 2rem;">
+            <button type="submit" class="button-primary" style="color: white; border: none; padding: 10px 20px; border-radius: 4px; cursor: pointer; width: 100%; margin-top: 2rem;">
                 Enviar Pago
             </button>
         </form>

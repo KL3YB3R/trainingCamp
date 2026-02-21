@@ -26,11 +26,13 @@ class Payments extends Model
     }
 
     public static function payReservation($request) {
+        if(!is_null($request->amount)) $amount = str_replace(['.', ','], ['', '.'], $request->amount);
+        
         return self::create([
             'reservation_id' => $request->reservation_id,
             'n_reference' => $request->n_reference,
             'phone_number' => $request->phone_number,
-            'amount' => $request->amount,
+            'amount' => $amount,
             'date_transfer' => $request->date_transfer,
             'status_id' => 1
         ]);

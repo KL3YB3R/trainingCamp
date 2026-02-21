@@ -268,8 +268,9 @@ async function actionPayment(button) {
         };
 
     if(isConfirmed) {
-        if(button.value == 'confirm') swalPercentage();    
-        else return updateStatusPayments(parameters);
+        updateStatusPayments(parameters);
+        //if(button.value == 'confirm') swalPercentage();    
+        //else return updateStatusPayments(parameters);
     }
 }
 

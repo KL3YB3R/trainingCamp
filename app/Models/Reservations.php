@@ -29,6 +29,7 @@ class Reservations extends Model
         'parish_id',
         'address',
         'total_amount',
+        'percent_paid',
     ];
 
     protected $appends = ['total_paid']; 
@@ -112,6 +113,7 @@ class Reservations extends Model
             'parish_id' => $request->parroquia_responsable,
             'address' => $request->address,
             'total_amount' => $totalToPay,
+            'percent_paid' => 0,
         ]);
     }
 
@@ -130,6 +132,7 @@ class Reservations extends Model
             'parish_id' => $request->parroquia_responsable,
             'address' => $request->address,
             'total_amount' => $totalToPay,
+            'percent_paid' => 0,
         ]);
     }
 

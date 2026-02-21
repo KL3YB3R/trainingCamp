@@ -58,6 +58,7 @@ Route::middleware(['auth', 'verified'])->group(function () {
         Route::post('/admin/deleteUser', 'deleteUser')->name('admin.deleteUser');
         Route::post('/admin/updateStatusPayments', 'updateStatusPayments')->name('admin.updateStatusPayments');
         Route::post('/admin/getParameters', 'getParameters')->name('admin.getParameters');
+        Route::post('/admin/validatePayment', 'validatePayment')->name('admin.validatePayment');
     });
 
     Route::controller(AforoController::class)->group(function () {

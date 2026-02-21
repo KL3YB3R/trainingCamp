@@ -90,7 +90,7 @@ class AdminController extends Controller
                     'date_transfer' => !is_null($value->date_transfer) ? Carbon::parse($value->date_transfer)->format('d / m / Y') : '',
                     'n_reference' => $value->n_reference,
                     'phone_reference' => $value->phone_number,
-                    'amount' => $value->amount,
+                    'amount' => number_format($value->amount, 2, ',', '.'),
                     'status' => $value->status->name,
                     'id' => $value->id,
                     'status_id' => $value->status_id
@@ -125,20 +125,29 @@ class AdminController extends Controller
         try {
             DB::beginTransaction();
 
-            $payment = Payments::find($request->idPayment);
+            $payment = Payments::with('reservation')->find($request->idPayment);
+
+            if(is_null($payment->reservation->total_amount)) 
+                return response()->json(['type' => 'warning', 'message' => 'No hay un pago asociado a la reservación'], 500);
 
             if($request->action == "reject") $payment->update(['status_id' => 3]);
             else {
-                $reservation = Reservations::find($payment->reservation_id);
-                $statusReservation = $request->percent < 100 ? 3 : 4;
-
+                $percent = number_format(($payment->amount * 100) / $payment->reservation->total_amount, 2, '.', '');
+                
                 if($request->percent >= 50) {
                     $updateAforo = Aforo::where('is_active', true)->orderBy('id', 'desc')->first();
-                    $updateAforo->update(['n_occupied' => $updateAforo->n_occupied + $reservation->n_guest]);
+                    $nOccupied = $updateAforo->n_occupied + $payment->reservation->n_guest;
+                    $updateAforo->update(['n_occupied' => $nOccupied]);
                 }
+
+                $statusReservation = $percent < 100 ? 3 : 4;
+                $totalPercent = $payment->reservation->percent_paid + $percent;
                 
                 $payment->update(['status_id' => 2]);
-                $reservation->update(['status_id' => $statusReservation]);
+                $payment->reservation->update([
+                    'status_id' => $statusReservation, 
+                    'percent_paid' => $totalPercent,
+                ]);
             }
 
             AuditTrails::logActivity(Auth::user()->id, 'Actualizar Estado de Pago');
@@ -163,5 +172,4 @@ class AdminController extends Controller
         
         return response()->json($parameters);
     }
-        
 }
