@@ -117,6 +117,11 @@ footer {
     color: #fff;
 }
 
+.button-purple {
+    background-color: var(--purple);
+    color: #fff;
+}
+
 .button-blue {
     background-color: var(--blue);
     color: #000;
@@ -201,7 +206,7 @@ input, textarea{
     -webkit-overflow-scrolling: touch; /* Suavidad en móviles */
     border-radius: 6px;
     margin-bottom: 1rem;
-    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1) !important;
 }
 
 .custom-table {

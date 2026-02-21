@@ -55,6 +55,7 @@
                 <th>Cantidad de Huespedes</th>
                 <th>Nombre de Grupo</th>
                 <th>Monto (Bs.)</th>
+                <th>Porcentaje abonado</th>
                 <th>Estatus</th>
                 <th>Acciones</th>
             </thead>
@@ -65,6 +66,7 @@
                     <td class="text-center" style="border-right: 1px solid #c1c1c1" data-field="n_guest"></td>
                     <td class="text-center" style="border-right: 1px solid #c1c1c1" data-field="group_name"></td>
                     <td class="text-center" style="border-right: 1px solid #c1c1c1" data-field="amount"></td>
+                    <td class="text-center" style="border-right: 1px solid #c1c1c1" data-field="percent_paid"></td>
                     <td class="text-center" style="border-right: 1px solid #c1c1c1" data-field="status"></td>
                     <td class="text-center actions" data-field="rowId">
                         <button type="button" data-modal-id="showPayments" id="buttonShowPayments" class="button-table btnModal button-success" title="Ver pagos" onclick="getPayments(this)">

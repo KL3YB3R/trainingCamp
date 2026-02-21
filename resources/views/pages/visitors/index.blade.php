@@ -18,6 +18,7 @@
 
     @include('pages.visitors.modals.reserva')
     @include('pages.visitors.modals.pagarReserva')
+    @include('pages.modals.showPayments')
 
 @endsection
 

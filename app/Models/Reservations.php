@@ -69,7 +69,7 @@ class Reservations extends Model
 
     public static function getReservations($userId = null, $request = null) {
         $reservations = self::with(['user:id,name,email', 'status', 'payments'])
-            ->select('id', 'user_id', 'start_date', 'end_date', 'n_guest', 'group_name', 'status_id', 'total_amount');
+            ->select('id', 'user_id', 'start_date', 'end_date', 'n_guest', 'group_name', 'status_id', 'total_amount', 'percent_paid');
 
         if(!is_null($userId)) $reservations = $reservations->where('user_id', $userId);
 

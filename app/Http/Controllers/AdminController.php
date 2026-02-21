@@ -72,7 +72,8 @@ class AdminController extends Controller
                 'group_name' => $value->group_name,
                 'amount' => $value->total_pagado,
                 'status' => $value->status->name,
-                'id' => $value->id
+                'id' => $value->id,
+                'percent_paid' => $value->percent_paid . '%',
             ];
         }
 
@@ -93,7 +94,10 @@ class AdminController extends Controller
                     'amount' => number_format($value->amount, 2, ',', '.'),
                     'status' => $value->status->name,
                     'id' => $value->id,
-                    'status_id' => $value->status_id
+                    'status_id' => $value->status_id,
+                    'reservation' => $value->reservation,
+                    'start_date_reservation' => !is_null($value->reservation->start_date) ? Carbon::parse($value->reservation->start_date)->format('d / m / Y') : '',
+                    'end_date_reservation' => !is_null($value->reservation->end_date) ? Carbon::parse($value->reservation->end_date)->format('d / m / Y') : '',
                 ];
             }
         }   

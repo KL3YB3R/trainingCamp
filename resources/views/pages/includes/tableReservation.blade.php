@@ -9,43 +9,48 @@
             <th>Cantidad de Huespedes</th>
             <th>Nombre de Grupo</th>
             <th>Monto (Bs.)</th>
+            <th>Porcentaje abonado</th>
             <th>Estatus</th>
             <th>Acciones</th>
         </thead>
         <tbody id="body_reservations">
             @foreach ($reservations as $reservation)
                 <tr>
-                    <td class="text-center align-middle" style="border-right: 1px solid #c1c1c1">
+                    <td width="12%" class="text-center align-middle" style="border-right: 1px solid #c1c1c1">
                         {{ 
                             !is_null($reservation->start_date) ? 
                             Carbon\Carbon::parse($reservation->start_date)->format('d / m / Y') : '' 
                         }}
                     </td>
 
-                    <td class="text-center align-middle" style="border-right: 1px solid #c1c1c1">
+                    <td width="12%" class="text-center align-middle" style="border-right: 1px solid #c1c1c1">
                         {{ 
                             !is_null($reservation->end_date) ? 
                             Carbon\Carbon::parse($reservation->end_date)->format('d / m / Y') : '' 
                         }}
                     </td>
 
-                    <td class="text-center align-middle" style="border-right: 1px solid #c1c1c1">
+                    <td width="10%" class="text-center align-middle" style="border-right: 1px solid #c1c1c1">
                         {{ $reservation->n_guest }}
                     </td>
 
-                    <td class="text-center align-middle" style="border-right: 1px solid #c1c1c1">
+                    <td width="20%" class="text-center align-middle" style="border-right: 1px solid #c1c1c1">
                         {{ $reservation->group_name }}
                     </td>
 
-                    <td class="text-center align-middle" style="border-right: 1px solid #c1c1c1">
+                    <td width="12%" class="text-center align-middle" style="border-right: 1px solid #c1c1c1">
                         {{ $reservation->total_amount }}
                     </td>
 
-                    <td class="text-center align-middle" style="border-right: 1px solid #c1c1c1">
+                    <td width="10%" class="text-center align-middle" style="border-right: 1px solid #c1c1c1">
+                        {{ $reservation->percent_paid }}%
+                    </td>
+
+                    <td width="12%" class="text-center align-middle" style="border-right: 1px solid #c1c1c1">
                         {{ $reservation->status->name }}
                     </td>
 
-                    <td class="text-center align-middle">
+                    <td width="12%" class="text-center align-middle">
                         <button type="button" class="button-table button-primary mb-1" title="Pagar Reserva" onclick="toggleModal('flex', 'payReservation', {{$reservation->id}})">
                             <i class="fa-solid fa-hand-holding-dollar" style="pointer-events: none;"></i>
                         </button>
@@ -58,6 +63,10 @@
                                     <i class="fa-solid fa-ban"></i>
                             </button>
                         @endif
+
+                        <button type="button" class="button-table button-purple ms-1 mb-1" title="Ver Pagos" onclick="showPayments({{$reservation->id}})">
+                            <i class="fas fa-history" style="pointer-events: none;"></i>
+                        </button>
 
                         <button type="button" class="button-table button-muted ms-1 mb-1" title="Ver Información" onclick="showInformationReservation({{$reservation->id}})">
                             <i class="fa-solid fa-list" style="pointer-events: none;"></i>
