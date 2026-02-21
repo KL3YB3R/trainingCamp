@@ -30,7 +30,8 @@
             </aside>
         </div>
 
-        <button id="search_users" type="submit" class="p-3 button button-primary mt-10 mb-2" style="background-color: #2b7a78; color: white; border: none; cursor: pointer;" data-action="search">
+        <button id="search_users" type="submit" class="p-3 button button-primary mt-10 mb-2" style="
+        color: white; border: none; cursor: pointer;" data-action="search">
             <i class="fa-solid fa-magnifying-glass"></i> Buscar
         </button>
         <button id="search_users" type="submit" class="p-3 button button-secondary mt-10 mb-2" style="color: white; border: none; cursor: pointer;" data-action="reset">
@@ -38,7 +39,7 @@
         </button>
     </form>
 
-    <button data-modal-id="newUser" type="button" class="btnModal p-3 button button-primary mt-10 mb-2" style="background-color: #2b7a78; color: white; border: none; cursor: pointer;">
+    <button data-modal-id="newUser" type="button" class="btnModal p-3 button button-primary mt-10 mb-2" style="color: white; border: none; cursor: pointer;">
         <i class="fa-solid fa-plus"></i> Nuevo Usuario
     </button>
 
