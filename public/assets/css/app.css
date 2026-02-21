@@ -1,0 +1,271 @@
+:root{
+    --bg: #F8F9FA;
+    --purple: #622599;
+    --green: #006B3F;
+    --blue: #00247D;
+    --yellow: #F7D117;
+    --purple-light: #EADCF7;
+    --green-light: #DFF2E9;
+    --yellow-light: #FEF9E7;
+    --red-light: #FCE8EA;
+    
+    
+    
+    --primary: #006B3F;
+    --primary-light: #def2f1;
+    --primary-dark: #17252a ;
+    --accent: #f2c94c;
+    --muted: #6b7280;
+    --cancel: #e53e3e;
+    --card: #ffffff;
+    --text: #1c1c1c;
+    --glass: rgba(255,255,255,0.6);
+    --radius: 10px;
+    --gap: 18px;
+    --max-width: 1100px;
+
+    /* color: #622599;
+    color: #006B3F;
+    color: #00247D;
+    color: #F7D117;
+    color: #CF142B;
+    color: #F8F9FA; */
+}
+
+body{
+    background-color: var(--bg);
+}
+
+html{
+    scroll-behavior: smooth;
+    height: 100vh;
+}
+
+header{
+    background-color: var(--purple) !important;
+    position:sticky; top:0; z-index:1000;
+    background: rgba(255,255,255,0.9);
+    backdrop-filter: blur(6px);
+    border-bottom: 1px solid rgba(20,20,20,0.04);
+    box-shadow: 0 4px 18px rgba(15,23,42,0.04);
+}
+
+.brand{ display:flex; gap:var(--gap); align-items:center; justify-content:space-between; padding:10px 0; }
+.brand .title{ font-weight:700; color:var(--primary); font-size:1.15rem; letter-spacing:0.2px; }
+
+nav ul{ list-style:none; margin:0; padding:0; display:flex; gap:10px; align-items:center; }
+nav a{
+    display:inline-flex; 
+    align-items:center; 
+    justify-content:center;
+    padding:8px 12px; 
+    border-radius:8px; 
+    color:#fff !important; 
+    text-decoration:none;
+    font-weight:600; 
+    font-size:0.95rem; 
+    transition: all 160ms ease;
+    background:transparent; 
+    box-shadow:none;
+}
+
+nav a:hover, nav a:focus{
+    background-color: var(--green);
+    transform: translateY(-2px);
+    box-shadow: 0 8px 20px rgba(46,125,50,0.06);
+    outline:none;
+}
+
+nav a.active{
+    background: linear-gradient(90deg, rgba(46,125,50,0.12), rgba(242,201,76,0.06));
+    color: var(--primary);
+}
+
+.logout-button:hover i{
+    transition: all 0.3s ease-in-out;
+    margin-left: .8rem;
+}
+
+footer {
+    flex-shrink: 0;
+}
+
+.error-help-block {
+    color: #e53e3e;
+    font-size: 0.875rem;
+    margin-top: 0.25rem;
+    font-weight: 500;
+}
+
+.container-home{ width:95% !important; margin: 0 auto;}
+
+/* Estilos para boton general */
+.button {
+    display: inline-block;
+    padding: 8px 16px;
+    font-weight: bold;
+    text-align: center;
+    text-decoration: none;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    width: fit-content;
+}
+
+.button-primary {
+    background-color: var(--green);
+    color: #fff;
+}
+
+.button-blue {
+    background-color: var(--blue);
+    color: #000;
+}
+
+.button-secondary {
+    background-color: var(--primary-dark);
+    color: #000;
+}
+
+.button-accent {
+    background-color: var(--accent);
+    color: #fff;
+}
+
+.button-cancel {
+    background-color: var(--cancel);
+    color: #fff;
+}
+
+.button-success {
+    background-color: #22c55e;
+    color: #fff;
+}
+
+.button-muted {
+    background-color: var(--muted);
+    color: #fff;
+}
+
+/* Estilos para formularios */
+
+label{ 
+    display:block;
+    font-size:0.9rem;
+    color:#333;
+    margin-top:8px;
+}
+    
+input, textarea{ 
+    width:100%;
+    padding:10px;
+    margin-top:6px;
+    border-radius:8px;
+    border:1px solid var(--green);
+}
+
+/* Contenedor opcional para la flecha personalizada */
+.custom-select {
+    width: 100%;
+    padding: 10px 15px;
+    font-size: 1rem;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: #17252a; /* Tu color de texto */
+    border: 1px solid #000; /* Tu color turquesa */
+    border-radius: 6px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+/* Estado al hacer clic o tabular */
+.custom-select:focus {
+    outline: none;
+    border-color: #2b7a78; /* Tu color principal */
+    box-shadow: 0 0 8px rgba(43, 122, 120, 0.2);
+}
+
+/* Estilo para los labels que lo acompañan */
+.select-label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: 600;
+    color: #2b7a78;
+    font-size: 0.9rem;
+}
+
+/* Estilos para la tabla personalizada */
+
+.table-container {
+    width: 100%;
+    overflow-x: auto; /* Habilita el scroll si la tabla es muy ancha */
+    -webkit-overflow-scrolling: touch; /* Suavidad en móviles */
+    border-radius: 6px;
+    margin-bottom: 1rem;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+}
+
+.custom-table {
+    width: 100%;
+    border-collapse: separate;
+    border-spacing: 0;
+    border-radius: 6px;
+    overflow: hidden;
+    
+}
+
+/* Encabezado elegante */
+.custom-table thead {
+    background-color: var(--blue); /* Color Indigo de Tailwind */
+    color: #ffffff;
+}
+
+.custom-table th {
+    padding: 12px 15px;
+    text-align: center;
+    font-weight: 600;
+    text-transform: uppercase;
+    font-size: 0.85rem;
+    letter-spacing: 0.05em;
+    border-left: 1px solid #f3f4f6;
+}
+
+/* Filas y celdas */
+.custom-table tbody tr {
+    background-color: #ffffff;
+    border-bottom: 1px solid #f3f4f6;
+    transition: background-color 0.2s ease;
+}
+
+.custom-table td {
+    padding: 12px 15px;
+    color: #374151;
+    font-size: 0.95rem;
+}
+
+/* Efecto hover y filas alternas */
+.custom-table tbody tr:nth-of-type(even) {
+    background-color: #f9fafb;
+}
+
+.custom-table tbody tr:hover {
+    background-color: var(--yellow-light); /* Color de fondo al pasar el mouse */
+    cursor: pointer;
+}
+
+/* Bordes redondeados para la primera y última fila */
+.custom-table tr:last-child td {
+    border-bottom: none;
+}
+
+/* Estilo para botones de las tablas */
+
+.button-table {
+    border-radius: 6px;
+    color: #fff;
+    padding: 5px 10px;
+    cursor: pointer;
+}
+
+.label-input{
+    font-weight: 600;
+}

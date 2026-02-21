@@ -1,0 +1,25 @@
+.payment-option {
+    display: flex;
+    align-items: center;
+    background: #feffff;
+    border: 2px solid #def2f1;
+    border-radius: 10px;
+    padding: 12px;
+    margin-bottom: 10px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+.payment-option:hover { border-color: #3aafa9; background: #def2f1; }
+.payment-option input { display: none; }
+.payment-option.selected { border-color: #2b7a78; background: #def2f1; box-shadow: 0 2px 4px rgba(43,122,120,0.2); }
+.option-icon { font-size: 1.5rem; margin-right: 15px; color: #2b7a78; width: 30px; text-align: center; }
+.option-text b { display: block; color: #17252a; font-size: 1rem; }
+.option-text small { color: #4a5568; font-size: 0.8rem; }
+
+.params-container {
+    display: grid; /* Cambiamos flex por grid */
+    grid-template-columns: repeat(3, 1fr); /* 3 columnas que ocupan todo el ancho */
+    gap: 15px;
+    width: 100%; /* Asegura que el padre use todo el espacio */
+    align-items: start; /* Alineación vertical */
+}

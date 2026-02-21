@@ -1,0 +1,75 @@
+.card-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+    justify-items: center;
+    width: 90%;
+    margin: 0 auto;
+    margin-top: 3rem;
+}
+
+.card-container aside {
+    background: #feffff; 
+    border: 1px solid var(--blue); 
+    padding: 15px; 
+    border-radius: 10px; 
+    width: 260px;
+    cursor: pointer;
+}
+
+.color-occupied{
+    color: var(--cancel);
+}
+
+.color-available{
+    color: var(--blue);
+}
+
+.card-container aside.no-pointer {
+    cursor: default;
+}
+
+.card-container aside figure,
+.card-container aside h1,
+.card-container aside h2,
+.card-container aside div,
+.card-container aside span,
+.card-container aside i{
+    pointer-events: none !important;
+}
+
+.card-container aside figure > button{
+    pointer-events: all !important;
+}
+
+.card-container aside:hover {
+    scale: calc(1.05);
+    transition: all 0.3s ease-in-out;
+}
+
+.card-container aside figure{
+    margin: 0; 
+    display: flex; 
+    justify-content: space-between; 
+    align-items: center;
+    margin-bottom: 5px;
+}
+
+.card-container aside figure > h2{
+    font-weight: 500; 
+    font-size: 1rem; 
+    color: var(--blue); 
+    margin: 0;
+}
+
+.card-container aside figure > button{
+    border: none; 
+    background: none; 
+    color: var(--blue); 
+    cursor: pointer;
+}
+
+.card-container aside > h1{
+    margin-top: 2rem;
+    font-weight: 500;
+}

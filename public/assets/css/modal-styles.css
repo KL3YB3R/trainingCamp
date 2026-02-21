@@ -1,0 +1,66 @@
+.modal-overlay {
+    display: none; /* Oculto por defecto */
+    position: fixed;
+    top: 0; left: 0; width: 100%; height: 100%;
+    background-color: rgba(0, 0, 0, 0.6);
+    z-index: 1000;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Caja del modal */
+.modal-content {
+    background-color: #feffff;
+    width: 90%; 
+    max-width: 600px;
+    max-height: 85vh; /* Altura máxima de la caja */
+    border-radius: 8px;
+    display: flex;         /* Agregado: para controlar hijos */
+    flex-direction: column; /* Agregado: header arriba, body abajo */
+    overflow: hidden; 
+    animation: fadeIn 0.3s;
+}
+
+.modal-content.width-lg {
+    max-width: 400px;
+}
+
+.modal-content.width-xl {
+    max-width: 800px;
+}
+
+.modal-content.width-2xl {
+    max-width: 1000px;
+}
+
+.modal-header { 
+    padding: 15px; 
+    display: flex; 
+    justify-content: space-between; 
+    align-items: center; 
+    font-weight: bold; 
+    /* ELIMINADO: overflow-y: auto !important; (No va aquí) */
+    background-color: var(--purple);
+    color: #fff;
+    flex-shrink: 0; /* Agregado: evita que el header se aplaste */
+}
+
+.modal-body { 
+    padding: 20px; 
+    background-color: #def2f1; 
+    overflow-y: auto !important; /* Agregado: aquí es donde ocurre la magia */
+    flex-grow: 1;               /* Agregado: ocupa el espacio sobrante */
+}
+
+.btn-modal{
+    background-color: var(--green); 
+    color: white; 
+    border: none; 
+    padding: 10px 20px; 
+    border-radius: 4px; 
+    cursor: pointer; 
+    width: 100%; 
+    margin-top: 2rem;
+}
+
+@keyframes fadeIn { from { opacity: 0; transform: translateY(-20px); } to { opacity: 1; transform: translateY(0); } }

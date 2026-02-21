@@ -1,0 +1,123 @@
+.gallery-container.empty_gallery {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 70vh;
+}
+
+.parent-gallery-home .gallery-container.gallery {
+    grid-template-columns: repeat(3, minmax(250px, 1fr));
+}
+
+.gallery-container.gallery {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(250px, 1fr));
+    gap: 20px;
+    justify-items: left;
+    width: 100%;
+    margin: 0 auto;
+    margin-top: 3rem;
+}
+
+.gallery-container > aside {
+    background: #feffff; 
+    border-radius: 12px; /* Bordes más redondeados para fotos */
+    width: 100%;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+    transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+    overflow: hidden; /* Corta la imagen según el border-radius */
+    display: flex;
+    flex-direction: column;
+}
+
+.gallery-container > aside:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 12px 24px rgba(43, 122, 120, 0.2);
+}
+
+.gallery-container > aside figure {
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    height: 250px; /* Altura más equilibrada */
+    background-color: #f3f4f6; /* Fondo mientras carga */
+}
+
+.gallery-container > aside img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Mantiene la proporción sin estirar */
+    transition: transform 0.6s ease;
+}
+
+.gallery-container > aside:hover img {
+    transform: scale(1.1); /* Efecto zoom suave al pasar el mouse */
+}
+
+.gallery-container > aside > div {
+    padding: 15px;
+    background: #feffff;
+    flex-grow: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.gallery-container > aside p {
+    margin: 0;
+    color: #4a5568;
+    font-size: 0.9rem;
+    font-style: italic;
+    text-align: center;
+    line-height: 1.4;
+}
+
+.gallery-container > aside > button {
+    background-color: #fff1f0;
+    color: #e53e3e;
+    border: none;
+    border-top: 1px solid #ffa39e;
+    padding: 8px;
+    width: 100%;
+    cursor: pointer;
+    font-weight: 600;
+    font-size: 0.8rem;
+    transition: background 0.3s;
+}
+
+.gallery-container > aside > button:hover {
+    background-color: #e53e3e;
+    color: #fff;
+}
+
+.custom-file-input {
+    width: 100%;
+    padding: 10px;
+    background-color: #feffff;
+    border: 2px dashed #3aafa9; /* Estilo de "zona de carga" */
+    border-radius: 8px;
+    color: #17252a;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.custom-file-input:hover {
+    background-color: #def2f1;
+    border-color: #2b7a78;
+}
+
+/* Estilo para el botón dentro del input (en navegadores modernos) */
+.custom-file-input::file-selector-button {
+    background-color: #2b7a78;
+    color: white;
+    border: none;
+    padding: 5px 15px;
+    border-radius: 4px;
+    margin-right: 10px;
+    cursor: pointer;
+}
+
+.custom-file-input::file-selector-button:hover {
+    background-color: #17252a;
+}
