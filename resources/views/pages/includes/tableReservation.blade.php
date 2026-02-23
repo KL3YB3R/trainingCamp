@@ -1,5 +1,5 @@
 <article class="flex flex-col justify-start align-baseline">
-    <button data-modal-id="newReserve" type="button" class="btnModal p-3 button button-primary mt-10 mb-2" style="color: white; border: none; cursor: pointer;" onclick="cleanInput(this)">
+    <button data-modal-id="newReserve" type="button" class="btnModal p-3 button button-primary mt-10 mb-2" style="color: white; border: none; cursor: pointer;" onclick="cleanInput(this); document.querySelector('#buttonReserve').style.display = 'block';">
         <i class="fa-solid fa-plus"></i> Nueva Reserva
     </button>
     <table id="table_reservations" class="custom-table">

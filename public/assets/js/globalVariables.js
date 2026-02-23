@@ -22,7 +22,7 @@ function swalMessage(message, type) {
     Swal.fire({
         text: message,
         icon: type,
-        confirmButtonColor: '#2b7a78',
+        confirmButtonColor: '#006B3F',
         confirmButtonText: 'Aceptar',
         timer: 2500
     });
@@ -34,7 +34,7 @@ function swalMessageWithQuestion(message, type, appearTitle = true) {
         text: message,
         icon: type,
         showCancelButton: true,
-        confirmButtonColor: '#2b7a78',
+        confirmButtonColor: '#006B3F',
         cancelButtonColor: '#17252a',
         confirmButtonText: 'Sí, continuar',
         cancelButtonText: 'Cancelar'
@@ -183,6 +183,7 @@ async function editReservation(reservation, type = 'edit') {
     modalReservation.querySelector('#parroquia_responsable').value = reservation?.parish?.id;
     modalReservation.querySelector('#address').value = reservation?.address;
     modalReservation.querySelector('.other_information').value = reservation?.id;
+    modalReservation.querySelector('#buttonReserve').style.display = type == 'show' ? 'none' : 'block';
     modalReservation.querySelector('#buttonReserve').innerHTML = "Guardar cambios";
 }
 

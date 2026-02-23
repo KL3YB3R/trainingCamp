@@ -33,7 +33,7 @@ class LoginController extends Controller
             $logController->saveLog($e->getMessage(), 500, 'login/authenticate', $e);
             return redirect()->route('login')
                 ->withInput()
-                ->with('error', 'No se pudo iniciar sesión. Por favor, intente nuevamente.');
+                ->with('error', 'Credenciales incorrectas. Por favor, intente nuevamente.');
         }
     }
 

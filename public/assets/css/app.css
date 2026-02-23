@@ -112,6 +112,11 @@ footer {
     width: fit-content;
 }
 
+.button:disabled{
+    cursor: not-allowed;
+    opacity: 0.6;
+}
+
 .button-primary {
     background-color: var(--green);
     color: #fff;

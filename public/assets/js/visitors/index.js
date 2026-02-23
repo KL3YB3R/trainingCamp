@@ -49,6 +49,7 @@ function showInformationReservation(reservationId) {
     getInformationReservation(reservationId, 'show');
     const modalReservation = D.querySelector('#newReserve');
     modalReservation.querySelectorAll('input, textarea, select').forEach(input => input.disabled = true);
+    modalReservation.querySelector('#buttonReserve').style.display = 'none';
 }
 
 

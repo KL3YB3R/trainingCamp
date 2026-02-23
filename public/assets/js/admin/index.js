@@ -207,7 +207,7 @@ async function saveUser(form) {
     Swal.fire({
         text: message,
         icon: type,
-        confirmButtonColor: '#2b7a78',
+        confirmButtonColor: '#006B3F',
         confirmButtonText: 'Aceptar',
         timer: 2500
     });
@@ -245,7 +245,7 @@ async function deleteUser(button) {
         Swal.fire({
             text: message,
             icon: type,
-            confirmButtonColor: '#2b7a78',
+            confirmButtonColor: '#006B3F',
             confirmButtonText: 'Aceptar',
             timer: 2500
         });
@@ -318,7 +318,7 @@ function swalPercentage() {
             });
         },
         focusConfirm: false,
-        confirmButtonColor: '#2b7a78',
+        confirmButtonColor: '#006B3F',
         confirmButtonText: '<i class="fa-solid fa-check"></i> Confirmar Pago',
         showCancelButton: true,
         cancelButtonText: 'Cancelar',
@@ -358,7 +358,7 @@ async function updateStatusPayments(parameters) {
     Swal.fire({
         text: data.message,
         icon: data.type,
-        confirmButtonColor: '#2b7a78',
+        confirmButtonColor: '#006B3F',
         confirmButtonText: 'Aceptar',
         timer: 2500
     });

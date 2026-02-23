@@ -26,7 +26,7 @@ async function registerUser(form){
     Swal.fire({
         text: message,
         icon: type,
-        confirmButtonColor: '#2b7a78',
+        confirmButtonColor: '#006B3F',
         confirmButtonText: 'Aceptar',
         timer: 2500
     });
