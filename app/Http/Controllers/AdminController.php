@@ -58,10 +58,7 @@ class AdminController extends Controller
         foreach ($reservations as $key => $value) {
             $montos = Payments::where('reservation_id', $value->id)->pluck('amount');
 
-            $sumaTotal = $montos->sum(function ($monto) {
-                $limpio = str_replace(['.', ','], ['', '.'], $monto);
-                return (float) $limpio;
-            });
+            $sumaTotal = $montos->sum();
 
             $value->total_pagado = number_format($sumaTotal, 2, ',', '.');
 
